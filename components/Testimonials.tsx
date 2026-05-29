@@ -14,7 +14,7 @@ const testimonials = [
   {
     stars: 5,
     quote:
-      "I used to dread tax season. Now I just forward the email Rose sends on the 10th. It's that simple.",
+      "I used to dread tax season. Now I just forward the monthly email Rose sends. It's that simple.",
     name: "Diane R.",
     initials: "DR",
     biz: "Owner, Coastal Pilates Studio · St. Augustine",

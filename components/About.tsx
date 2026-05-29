@@ -71,7 +71,7 @@ export default function About() {
             <div className="cert-badges">
               <img src="/badges/qb-payroll.png" alt="QuickBooks Payroll Certified" />
               <img src="/badges/qb-level2.png" alt="QuickBooks Advanced ProAdvisor" />
-              <img src="/badges/xero-advisor.png" alt="Xero Advisor Certified" />
+              <span className="cert-badge-text">Xero Advisor Certified</span>
             </div>
             <a href="#cta" className="btn btn-primary">Work with Rose →</a>
           </div>

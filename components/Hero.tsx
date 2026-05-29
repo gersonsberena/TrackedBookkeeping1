@@ -43,7 +43,7 @@ export default function Hero() {
         </h1>
         <p className="hero-sub">
           Monthly bookkeeping for Northeast Florida small businesses —
-          delivered by the 10th, every month.
+          delivered every month, on time.
         </p>
         <div className="hero-ctas">
           <a href="#cta" className="btn btn-primary">Let&apos;s talk →</a>
