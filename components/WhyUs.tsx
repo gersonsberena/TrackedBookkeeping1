@@ -1,3 +1,7 @@
+'use client';
+import { useEffect, useRef } from 'react';
+import { gsap } from '@/lib/gsap';
+
 const cards = [
   {
     title: "Local & available",
@@ -5,7 +9,7 @@ const cards = [
   },
   {
     title: "Delivered by the 10th",
-    body: "Not \"when we get to it.\" Your financials land in your inbox on the same date every month, guaranteed.",
+    body: "Every month, same date. Your books are closed, reconciled, and in your inbox by the 10th — bookkeeping as a recurring routine, not a one-off task.",
   },
   {
     title: "Human eyes, every time",
@@ -27,8 +31,24 @@ function WhyIcon({ index }: { index: number }) {
 }
 
 export default function WhyUs() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.why .section-head', {
+        y: 32, opacity: 0, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: '.why .section-head', start: 'top 82%' },
+      });
+      gsap.from('.why-card', {
+        y: 30, opacity: 0, duration: 0.55, ease: 'power2.out', stagger: 0.1,
+        scrollTrigger: { trigger: '.why-grid', start: 'top 80%' },
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="why" id="why-us">
+    <section className="why" id="why-us" ref={ref}>
       <div className="container">
         <div className="section-head">
           <p className="eyebrow eyebrow-light">Why Tracked</p>

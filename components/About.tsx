@@ -1,13 +1,34 @@
+'use client';
+import { useEffect, useRef } from 'react';
+import { gsap } from '@/lib/gsap';
+
 const credentials = [
   "Certified Bookkeeper (CB)",
-  "QuickBooks ProAdvisor",
+  "QuickBooks Advanced ProAdvisor",
+  "Xero Advisor Certified",
   "7+ years bookkeeping experience",
   "Northeast Florida native",
 ];
 
 export default function About() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.portrait-frame', {
+        x: -40, opacity: 0, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: '.about-grid', start: 'top 78%' },
+      });
+      gsap.from('.about-grid > div:last-child', {
+        x: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: '.about-grid', start: 'top 78%' },
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" ref={ref}>
       <div className="container">
         <div className="about-grid">
           <div className="portrait-frame">
@@ -46,6 +67,11 @@ export default function About() {
                   <div className="am-lbl">{cred}</div>
                 </div>
               ))}
+            </div>
+            <div className="cert-badges">
+              <img src="/badges/qb-payroll.png" alt="QuickBooks Payroll Certified" />
+              <img src="/badges/qb-level2.png" alt="QuickBooks Advanced ProAdvisor" />
+              <img src="/badges/xero-advisor.png" alt="Xero Advisor Certified" />
             </div>
             <a href="#cta" className="btn btn-primary">Work with Rose →</a>
           </div>

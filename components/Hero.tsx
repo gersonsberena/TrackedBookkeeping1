@@ -1,6 +1,23 @@
+'use client';
+import { useEffect, useRef } from 'react';
+import { gsap } from '@/lib/gsap';
+
 export default function Hero() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.timeline({ defaults: { ease: 'power3.out' } })
+        .from('.hero-eyebrow', { y: 18, opacity: 0, duration: 0.6, delay: 0.15 })
+        .from('.hero-h1', { y: 56, opacity: 0, duration: 0.85 }, '-=0.35')
+        .from('.hero-sub', { y: 22, opacity: 0, duration: 0.6 }, '-=0.45')
+        .from('.hero-ctas .btn', { y: 14, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.3');
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" ref={ref}>
       <div className="hero-media">
         <video
           autoPlay
@@ -29,7 +46,7 @@ export default function Hero() {
           delivered by the 10th, every month.
         </p>
         <div className="hero-ctas">
-          <a href="#cta" className="btn btn-primary">Request a quote →</a>
+          <a href="#cta" className="btn btn-primary">Let&apos;s talk →</a>
           <a href="#process" className="btn btn-ghost">Book a 30-min call</a>
         </div>
       </div>

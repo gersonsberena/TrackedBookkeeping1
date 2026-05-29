@@ -45,8 +45,9 @@ export default function Footer() {
           <div className="footer-col">
             <p className="footer-h">Contact</p>
             <a href="mailto:hello@trackedbookkeeping.com">hello@trackedbookkeeping.com</a>
-            <a href="tel:+19045550123">(904) 555-0123</a>
-            <a href="#cta">Request a quote →</a>
+            <a href="tel:+19043256184">(904) 325-6184</a>
+            <span className="footer-hours">Mon–Fri, 9 AM – 5 PM</span>
+            <a href="#cta">Let&apos;s talk →</a>
           </div>
         </div>
 

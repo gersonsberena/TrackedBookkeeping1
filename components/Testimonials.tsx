@@ -1,3 +1,7 @@
+'use client';
+import { useEffect, useRef } from 'react';
+import { gsap } from '@/lib/gsap';
+
 const testimonials = [
   {
     stars: 5,
@@ -26,8 +30,24 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.testi-head', {
+        y: 30, opacity: 0, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: '.testi-head', start: 'top 82%' },
+      });
+      gsap.from('.testi-card', {
+        y: 34, opacity: 0, duration: 0.6, ease: 'power2.out', stagger: 0.12,
+        scrollTrigger: { trigger: '.testi-grid', start: 'top 80%' },
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="testi" id="testimonials">
+    <section className="testi" id="testimonials" ref={ref}>
       <div className="container">
         <div className="testi-head">
           <div>
@@ -36,7 +56,7 @@ export default function Testimonials() {
           </div>
           <div className="testi-aggregate">
             <div className="ta-stars">{"★".repeat(5)}</div>
-            <p className="ta-text"><strong>5.0</strong> from 40+ clients</p>
+            <p className="ta-text"><strong>5.0</strong> — verified reviews</p>
           </div>
         </div>
         <div className="testi-grid" style={{ marginTop: 56 }}>

@@ -1,3 +1,7 @@
+'use client';
+import { useEffect, useRef } from 'react';
+import { gsap } from '@/lib/gsap';
+
 function PlMiniCard() {
   return (
     <div className="dirC-dash" style={{ marginTop: 20 }} aria-hidden="true">
@@ -43,8 +47,24 @@ const steps = [
 ];
 
 export default function Process() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.process .section-head', {
+        y: 32, opacity: 0, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: '.process .section-head', start: 'top 82%' },
+      });
+      gsap.from('.proc-step', {
+        y: 34, opacity: 0, duration: 0.55, ease: 'power2.out', stagger: 0.1,
+        scrollTrigger: { trigger: '.proc-grid', start: 'top 80%' },
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="process" id="process">
+    <section className="process" id="process" ref={ref}>
       <div className="container">
         <div className="section-head">
           <p className="eyebrow">How it works</p>

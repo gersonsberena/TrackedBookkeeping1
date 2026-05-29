@@ -19,7 +19,7 @@ export default function Nav() {
           <li><a href="#about">About Rose</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="#cta" className="btn btn-nav">Request a quote →</a>
+        <a href="#cta" className="btn btn-nav">Let&apos;s talk</a>
       </div>
     </nav>
   );
