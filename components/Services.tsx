@@ -1,3 +1,7 @@
+'use client';
+import { useEffect, useRef } from 'react';
+import { gsap } from '@/lib/gsap';
+
 function PlDashCard() {
   return (
     <div className="dirC-dash" aria-hidden="true">
@@ -61,8 +65,24 @@ const services = [
 ];
 
 export default function Services() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.services-head', {
+        y: 32, opacity: 0, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: '.services-head', start: 'top 82%' },
+      });
+      gsap.from('.svc-card', {
+        y: 36, opacity: 0, duration: 0.6, ease: 'power2.out', stagger: 0.12,
+        scrollTrigger: { trigger: '.svc-grid', start: 'top 80%' },
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="services" id="services">
+    <section className="services" id="services" ref={ref}>
       <div className="container">
         <div className="services-head">
           <div>

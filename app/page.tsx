@@ -7,6 +7,7 @@ import Process from "@/components/Process";
 import WhyUs from "@/components/WhyUs";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
+import Industries from "@/components/Industries";
 import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
 import Footer from "@/components/Footer";
@@ -23,6 +24,7 @@ export default function Home() {
       <WhyUs />
       <About />
       <Testimonials />
+      <Industries />
       <Faq />
       <CtaBand />
       <Footer />

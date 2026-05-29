@@ -116,7 +116,7 @@ export default function CtaBand() {
                   style={{ width: "100%", justifyContent: "center" }}
                   disabled={status === 'sending'}
                 >
-                  {status === 'sending' ? 'Sending…' : 'Request a free quote →'}
+                  {status === 'sending' ? 'Sending…' : 'Let\'s talk →'}
                 </button>
               </form>
             )}
