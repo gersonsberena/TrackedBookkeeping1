@@ -36,7 +36,7 @@ const steps = [
   {
     num: "03",
     title: "Review your reports",
-    body: "Receive your P&L, balance sheet, and cash-flow statement by the 10th of each month.",
+    body: "Receive your P&L, balance sheet, and cash-flow statement every month.",
     motif: true,
   },
   {

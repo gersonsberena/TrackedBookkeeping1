@@ -8,8 +8,8 @@ const cards = [
     body: "Based in Northeast Florida. We know the regional economy — seasonal businesses, tourism cycles, construction booms.",
   },
   {
-    title: "Delivered by the 10th",
-    body: "Every month, same date. Your books are closed, reconciled, and in your inbox by the 10th — bookkeeping as a recurring routine, not a one-off task.",
+    title: "Delivered every month",
+    body: "Every month, on schedule. Your books are closed, reconciled, and in your inbox — bookkeeping as a recurring routine, not a one-off task.",
   },
   {
     title: "Human eyes, every time",

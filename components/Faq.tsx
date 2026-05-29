@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "When do I receive my monthly reports?",
-    a: "By the 10th of every month — guaranteed. You'll receive a PDF with your P&L, balance sheet, and a brief summary of anything notable we spotted.",
+    a: "Every month, on schedule — guaranteed. You'll receive a PDF with your P&L, balance sheet, and a brief summary of anything notable we spotted.",
   },
   {
     q: "Do you do taxes?",

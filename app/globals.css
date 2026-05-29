@@ -424,6 +424,14 @@ button { font-family: inherit; cursor: pointer; }
 .about-link:hover { gap: 12px; }
 .cert-badges { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 0 0 28px; }
 .cert-badges img { height: 64px; width: auto; object-fit: contain; }
+.cert-badge-text {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 64px; padding: 0 18px;
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent-ink); font-weight: 500;
+}
 
 /* ============== TESTIMONIALS ============== */
 .testi { padding: 110px 0 110px; background: var(--bg-card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }

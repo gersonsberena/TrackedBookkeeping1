@@ -23,7 +23,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Tracked Bookkeeping | Jacksonville & St. Augustine Bookkeeper",
   description:
-    "Local bookkeeping for small businesses in Northeast Florida. Monthly financials, QuickBooks cleanup, and tax-ready reports — all delivered by the 10th.",
+    "Local bookkeeping for small businesses in Northeast Florida. Monthly financials, QuickBooks cleanup, and tax-ready reports — delivered every month, on time.",
   keywords: [
     "bookkeeper Jacksonville FL",
     "bookkeeping St Augustine",

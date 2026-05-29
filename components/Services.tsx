@@ -45,7 +45,7 @@ const services = [
     id: "monthly",
     num: "01",
     title: "Monthly Bookkeeping",
-    blurb: "Full-cycle monthly close — bank feeds, categorization, reconciliation, and financial statements delivered by the 10th.",
+    blurb: "Full-cycle monthly close — bank feeds, categorization, reconciliation, and financial statements delivered every month.",
     highlight: true,
   },
   {
